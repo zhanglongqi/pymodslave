@@ -228,7 +228,7 @@ class ModSlaveMainWindow(QtGui.QMainWindow):
 
     def _load_params(self):
         self._logger.info("Load params")
-        config_tcp_defaut = {'TCP_Port':'502', 'TCP_IP':'127.000.000.001'}
+        config_tcp_defaut = {'TCP_Port':'502', 'TCP_IP':'127.0.0.1'}
         config_rtu_defaut = {'RTU_Port':'0', 'Baud':'9600', 'DataBits':'8', 'StopBits':'1', 'Parity':'None'}
         config_var_defaut = {'Coils':'0', 'DisInputs':'0', 'InputRegs':'0', 'HoldRegs':'0', 'TimeInterval':'1000', 'MaxNoOfBusMonitorLines':'50'}
         config_default = {}
