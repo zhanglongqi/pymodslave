@@ -25,7 +25,7 @@ class ModSlaveSettingsTCPWindow(QtGui.QDialog):
         super(ModSlaveSettingsTCPWindow,self).__init__()
         #init value
         self.tcp_port = 502
-        self.tcp_ip = '127.000.000.001'
+        self.tcp_ip = '127.0.0.1'
         self._logger = logging.getLogger("modbus_tk")
         self.setupUI()
 
