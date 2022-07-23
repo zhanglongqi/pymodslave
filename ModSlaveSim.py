@@ -90,8 +90,8 @@ class ModSlaveSim(QtCore.QObject):
 			#create timer
 			self._timer = rt.RepeatTimer(timeIntervalSim, self._simBlockValues, 0)
 			self._simBlockValues()
-		except (Exception, msg):
-			self._logger.error("Slave Init Error : {0}".format(msg))
+		except Exception as e:
+			self._logger.error(f"Slave Init Error : {e}")
 
 	def start(self):
 		self._logger.info("Slave sim started")
