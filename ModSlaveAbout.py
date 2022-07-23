@@ -10,24 +10,28 @@
 #-------------------------------------------------------------------------------
 #!/usr/bin/env python
 
-from PyQt4 import QtGui,QtCore
+from PySide6 import QtGui, QtCore, QtWidgets
 from Ui_about import Ui_About
 
 _VERSION = "0.3.6"
-_URL = "<a href = ""http://sourceforge.net/projects/pymodslave"">Sourceforge Project Home Page</a>"
+_URL = "<a href = " "http://sourceforge.net/projects/pymodslave" ">Sourceforge Project Home Page</a>"
+
 
 #-------------------------------------------------------------------------------
-class ModSlaveAboutWindow(QtGui.QDialog):
-    """ Class wrapper for about window ui """
+class ModSlaveAboutWindow(QtWidgets.QDialog, Ui_About):
+	""" Class wrapper for about window ui """
 
-    def __init__(self):
-        super(ModSlaveAboutWindow,self).__init__()
-        self.setupUI()
+	def __init__(self):
+		super(ModSlaveAboutWindow, self).__init__()
+		self.setupUi(self)
+		# self.setupUI()
 
-    def setupUI(self):
-        #create window from ui
-        self.ui=Ui_About()
-        self.ui.setupUi(self)
-        self.ui.lblVersion.setText("pyModSlave v{0}".format(_VERSION))
-        self.ui.lblURL.setText(_URL)
+	def setupUI(self):
+		#create window from ui
+		self.ui = Ui_About()
+		self.ui.setupUi(self)
+		self.ui.lblVersion.setText("pyModSlave v{0}".format(_VERSION))
+		self.ui.lblURL.setText(_URL)
+
+
 #-------------------------------------------------------------------------------

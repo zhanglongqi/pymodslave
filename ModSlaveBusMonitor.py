@@ -10,7 +10,7 @@
 #-------------------------------------------------------------------------------
 #!/usr/bin/env python
 
-from PyQt4 import QtGui,QtCore
+from PySide6 import QtGui,QtCore, QtWidgets
 from Ui_busmonitor import Ui_BusMonitor
 import datetime as dt
 import Utils
@@ -27,14 +27,14 @@ SERVER_TCP_HOOKS = ("modbus_tcp.TcpServer.after_recv", "modbus_tcp.TcpServer.bef
 SERVER_RTU_HOOKS = ("modbus_rtu.RtuServer.after_read", "modbus_rtu.RtuServer.before_write")
 
 #-------------------------------------------------------------------------------
-class ModSlaveBusMonitorWindow(QtGui.QMainWindow):
+class ModSlaveBusMonitorWindow(QtWidgets.QMainWindow):
     """ Class wrapper for modbus data """
 
     def __init__(self):
         super(ModSlaveBusMonitorWindow,self).__init__()
         self._logger = logging.getLogger("modbus_tk")
-        self._model = QtGui.QStringListModel()
-        self._string_list = QtCore.QStringList()
+        self._model = QtCore.QStringListModel()
+        self._string_list = []
         self._max_no_of_bus_monitor_lines = 50
         self.packets = 0
         self.errors = 0

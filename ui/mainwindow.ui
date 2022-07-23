@@ -6,17 +6,11 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>360</width>
-    <height>170</height>
+    <width>384</width>
+    <height>222</height>
    </rect>
   </property>
   <property name="minimumSize">
-   <size>
-    <width>360</width>
-    <height>170</height>
-   </size>
-  </property>
-  <property name="maximumSize">
    <size>
     <width>360</width>
     <height>170</height>
@@ -26,7 +20,7 @@
    <string>Modbus Slave</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="icons/pyModSlaveQt.qrc">
+   <iconset>
     <normaloff>:/img/Bus.png</normaloff>:/img/Bus.png</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
@@ -51,93 +45,83 @@
       <property name="frameShadow">
        <enum>QFrame::Sunken</enum>
       </property>
-      <widget class="QWidget" name="layoutWidget">
-       <property name="geometry">
-        <rect>
-         <x>6</x>
-         <y>6</y>
-         <width>325</width>
-         <height>26</height>
-        </rect>
-       </property>
-       <layout class="QGridLayout" name="gridLayoutSettings">
-        <property name="leftMargin">
-         <number>0</number>
-        </property>
-        <property name="topMargin">
-         <number>0</number>
-        </property>
-        <item row="0" column="4">
-         <spacer name="horizontalSpacer_1">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="0" column="2">
-         <widget class="QLabel" name="lblSlaveID">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLabel" name="lblModbusMode">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Modbus Mode</string>
+         </property>
+         <property name="buddy">
+          <cstring>cmbModbusMode</cstring>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="cmbModbusMode">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>24</height>
+          </size>
+         </property>
+         <item>
           <property name="text">
-           <string>Slave ID</string>
+           <string>RTU</string>
           </property>
-          <property name="buddy">
-           <cstring>sbSlaveID</cstring>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="3">
-         <widget class="QSpinBox" name="sbSlaveID">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>24</height>
-           </size>
-          </property>
-          <property name="minimum">
-           <number>1</number>
-          </property>
-          <property name="maximum">
-           <number>255</number>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QComboBox" name="cmbModbusMode">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>24</height>
-           </size>
-          </property>
-          <item>
-           <property name="text">
-            <string>RTU</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>TCP</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item row="0" column="0">
-         <widget class="QLabel" name="lblModbusMode">
+         </item>
+         <item>
           <property name="text">
-           <string>Modbus Mode</string>
+           <string>TCP</string>
           </property>
-          <property name="buddy">
-           <cstring>cmbModbusMode</cstring>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lblSlaveID">
+         <property name="text">
+          <string>Slave ID</string>
+         </property>
+         <property name="buddy">
+          <cstring>sbSlaveID</cstring>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSpinBox" name="sbSlaveID">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="minimum">
+          <number>1</number>
+         </property>
+         <property name="maximum">
+          <number>255</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_1">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>31</width>
+           <height>9</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
      </widget>
     </item>
     <item>
@@ -160,90 +144,80 @@
       <property name="frameShadow">
        <enum>QFrame::Sunken</enum>
       </property>
-      <widget class="QWidget" name="layoutWidget">
-       <property name="geometry">
-        <rect>
-         <x>5</x>
-         <y>6</y>
-         <width>326</width>
-         <height>26</height>
-        </rect>
-       </property>
-       <layout class="QGridLayout" name="gridLayoutCmds">
-        <item row="0" column="3">
-         <spacer name="horizontalSpacer_2">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="0" column="0">
-         <widget class="QPushButton" name="btStartStop">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>24</height>
-           </size>
-          </property>
-          <property name="toolTip">
-           <string>Start-Stop</string>
-          </property>
-          <property name="text">
-           <string>Start</string>
-          </property>
-          <property name="icon">
-           <iconset resource="icons/pyModSlaveQt.qrc">
-            <normaloff>:/img/run-16.png</normaloff>
-            <normalon>:/img/stop-16.png</normalon>:/img/run-16.png</iconset>
-          </property>
-          <property name="iconSize">
-           <size>
-            <width>16</width>
-            <height>16</height>
-           </size>
-          </property>
-          <property name="checkable">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="2">
-         <widget class="QSpinBox" name="spInterval">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>24</height>
-           </size>
-          </property>
-          <property name="minimum">
-           <number>1000</number>
-          </property>
-          <property name="maximum">
-           <number>10000</number>
-          </property>
-          <property name="singleStep">
-           <number>500</number>
-          </property>
-          <property name="value">
-           <number>5000</number>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QLabel" name="lblSimCycle">
-          <property name="text">
-           <string>Simulate Every (msec)</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QPushButton" name="btStartStop">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Start-Stop</string>
+         </property>
+         <property name="text">
+          <string>Start</string>
+         </property>
+         <property name="icon">
+          <iconset resource="icons/pyModSlaveQt.qrc">
+           <normaloff>:/img/run-16.png</normaloff>
+           <normalon>:/img/stop-16.png</normalon>:/img/run-16.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>16</width>
+           <height>16</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lblSimCycle">
+         <property name="text">
+          <string>Simulate Every (msec)</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSpinBox" name="spInterval">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="minimum">
+          <number>1000</number>
+         </property>
+         <property name="maximum">
+          <number>10000</number>
+         </property>
+         <property name="singleStep">
+          <number>500</number>
+         </property>
+         <property name="value">
+          <number>5000</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>26</width>
+           <height>9</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
      </widget>
     </item>
    </layout>
@@ -253,8 +227,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>360</width>
-     <height>21</height>
+     <width>384</width>
+     <height>24</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -363,7 +337,7 @@
   </action>
   <action name="actionCoils">
    <property name="icon">
-    <iconset resource="icons/pyModSlaveQt.qrc">
+    <iconset>
      <normaloff>:/img/DO.png</normaloff>:/img/DO.png</iconset>
    </property>
    <property name="text">
@@ -372,7 +346,7 @@
   </action>
   <action name="actionDigital_Inputs">
    <property name="icon">
-    <iconset resource="icons/pyModSlaveQt.qrc">
+    <iconset>
      <normaloff>:/img/DI.png</normaloff>:/img/DI.png</iconset>
    </property>
    <property name="text">
@@ -381,7 +355,7 @@
   </action>
   <action name="actionHolding_Registers">
    <property name="icon">
-    <iconset resource="icons/pyModSlaveQt.qrc">
+    <iconset>
      <normaloff>:/img/AO.png</normaloff>:/img/AO.png</iconset>
    </property>
    <property name="text">
@@ -390,7 +364,7 @@
   </action>
   <action name="actionAnalog_Inputs">
    <property name="icon">
-    <iconset resource="icons/pyModSlaveQt.qrc">
+    <iconset>
      <normaloff>:/img/AI.png</normaloff>:/img/AI.png</iconset>
    </property>
    <property name="text">
@@ -399,7 +373,7 @@
   </action>
   <action name="actionIO_Data">
    <property name="icon">
-    <iconset resource="icons/pyModSlaveQt.qrc">
+    <iconset>
      <normaloff>:/img/IO.png</normaloff>:/img/IO.png</iconset>
    </property>
    <property name="text">

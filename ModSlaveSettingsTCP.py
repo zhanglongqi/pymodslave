@@ -10,7 +10,7 @@
 #-------------------------------------------------------------------------------
 #!/usr/bin/env python
 
-from PyQt4 import QtGui,QtCore
+from PySide6 import QtGui,QtCore, QtWidgets
 from Ui_settingsModbusTCP import Ui_SettingsModbusTCP
 
 import Utils
@@ -18,7 +18,7 @@ import Utils
 import logging
 
 #-------------------------------------------------------------------------------
-class ModSlaveSettingsTCPWindow(QtGui.QDialog):
+class ModSlaveSettingsTCPWindow(QtWidgets.QDialog):
     """ Class wrapper for TCP settings ui """
 
     def __init__(self):

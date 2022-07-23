@@ -1,55 +1,65 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'about.ui'
-#
-# Created: Tue Oct 30 15:56:02 2012
-#      by: PyQt4 UI code generator 4.9.1
-#
-# WARNING! All changes made in this file will be lost!
+################################################################################
+## Form generated from reading UI file 'about.ui'
+##
+## Created by: Qt User Interface Compiler version 6.3.1
+##
+## WARNING! All changes made in this file will be lost when recompiling UI file!
+################################################################################
 
-from PyQt4 import QtCore, QtGui
-
-try:
-    _fromUtf8 = QtCore.QString.fromUtf8
-except AttributeError:
-    _fromUtf8 = lambda s: s
+from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
+    QMetaObject, QObject, QPoint, QRect,
+    QSize, QTime, QUrl, Qt)
+from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
+    QFont, QFontDatabase, QGradient, QIcon,
+    QImage, QKeySequence, QLinearGradient, QPainter,
+    QPalette, QPixmap, QRadialGradient, QTransform)
+from PySide6.QtWidgets import (QApplication, QDialog, QLabel, QSizePolicy,
+    QVBoxLayout, QWidget)
+import pyModSlaveQt_rc
 
 class Ui_About(object):
     def setupUi(self, About):
-        About.setObjectName(_fromUtf8("About"))
+        if not About.objectName():
+            About.setObjectName(u"About")
         About.resize(400, 80)
-        About.setMaximumSize(QtCore.QSize(400, 80))
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(_fromUtf8(":/img/info16.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        About.setMaximumSize(QSize(400, 80))
+        icon = QIcon()
+        icon.addFile(u":/img/info16.png", QSize(), QIcon.Normal, QIcon.Off)
         About.setWindowIcon(icon)
         About.setModal(True)
-        self.verticalLayout = QtGui.QVBoxLayout(About)
-        self.verticalLayout.setObjectName(_fromUtf8("verticalLayout"))
-        self.lblVersion = QtGui.QLabel(About)
-        font = QtGui.QFont()
+        self.verticalLayout = QVBoxLayout(About)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.lblVersion = QLabel(About)
+        self.lblVersion.setObjectName(u"lblVersion")
+        font = QFont()
         font.setPointSize(18)
         font.setBold(True)
-        font.setWeight(75)
         self.lblVersion.setFont(font)
-        self.lblVersion.setAlignment(QtCore.Qt.AlignCenter)
-        self.lblVersion.setObjectName(_fromUtf8("lblVersion"))
+        self.lblVersion.setAlignment(Qt.AlignCenter)
+
         self.verticalLayout.addWidget(self.lblVersion)
-        self.lblURL = QtGui.QLabel(About)
-        font = QtGui.QFont()
-        font.setBold(True)
-        font.setWeight(75)
-        self.lblURL.setFont(font)
-        self.lblURL.setAlignment(QtCore.Qt.AlignCenter)
+
+        self.lblURL = QLabel(About)
+        self.lblURL.setObjectName(u"lblURL")
+        font1 = QFont()
+        font1.setBold(True)
+        self.lblURL.setFont(font1)
+        self.lblURL.setAlignment(Qt.AlignCenter)
         self.lblURL.setOpenExternalLinks(True)
-        self.lblURL.setObjectName(_fromUtf8("lblURL"))
+
         self.verticalLayout.addWidget(self.lblURL)
 
+
         self.retranslateUi(About)
-        QtCore.QMetaObject.connectSlotsByName(About)
+
+        QMetaObject.connectSlotsByName(About)
+    # setupUi
 
     def retranslateUi(self, About):
-        About.setWindowTitle(QtGui.QApplication.translate("About", "About", None, QtGui.QApplication.UnicodeUTF8))
-        self.lblVersion.setText(QtGui.QApplication.translate("About", "pyModSlave", None, QtGui.QApplication.UnicodeUTF8))
-        self.lblURL.setText(QtGui.QApplication.translate("About", "http://", None, QtGui.QApplication.UnicodeUTF8))
+        About.setWindowTitle(QCoreApplication.translate("About", u"About", None))
+        self.lblVersion.setText(QCoreApplication.translate("About", u"pyModSlave", None))
+        self.lblURL.setText(QCoreApplication.translate("About", u"http://", None))
+    # retranslateUi
 
-import pyModSlaveQt_rc

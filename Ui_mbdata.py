@@ -1,184 +1,235 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'mbdata.ui'
-#
-# Created: Wed Apr 03 14:32:30 2013
-#      by: PyQt4 UI code generator 4.9.1
-#
-# WARNING! All changes made in this file will be lost!
+################################################################################
+## Form generated from reading UI file 'mbdata.ui'
+##
+## Created by: Qt User Interface Compiler version 6.1.0
+##
+## WARNING! All changes made in this file will be lost when recompiling UI file!
+################################################################################
 
-from PyQt4 import QtCore, QtGui
+from PySide6.QtCore import *
+from PySide6.QtGui import *
+from PySide6.QtWidgets import *
 
-try:
-    _fromUtf8 = QtCore.QString.fromUtf8
-except AttributeError:
-    _fromUtf8 = lambda s: s
+import pyModSlaveQt_rc
 
 class Ui_MBData(object):
     def setupUi(self, MBData):
-        MBData.setObjectName(_fromUtf8("MBData"))
+        if not MBData.objectName():
+            MBData.setObjectName(u"MBData")
         MBData.resize(500, 420)
-        MBData.setMinimumSize(QtCore.QSize(500, 420))
-        MBData.setMaximumSize(QtCore.QSize(500, 420))
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(_fromUtf8(":/img/Bus.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        MBData.setMinimumSize(QSize(500, 420))
+        MBData.setMaximumSize(QSize(500, 420))
+        icon = QIcon()
+        icon.addFile(u":/img/Bus.png", QSize(), QIcon.Normal, QIcon.Off)
         MBData.setWindowIcon(icon)
-        self.centralwidget = QtGui.QWidget(MBData)
-        self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
-        self.tabIOs = QtGui.QTabWidget(self.centralwidget)
-        self.tabIOs.setGeometry(QtCore.QRect(10, 11, 481, 401))
-        self.tabIOs.setObjectName(_fromUtf8("tabIOs"))
-        self.tabCoils = QtGui.QWidget()
-        self.tabCoils.setObjectName(_fromUtf8("tabCoils"))
-        self.verticalLayoutWidget = QtGui.QWidget(self.tabCoils)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(6, 5, 452, 364))
-        self.verticalLayoutWidget.setObjectName(_fromUtf8("verticalLayoutWidget"))
-        self.verticalLayout = QtGui.QVBoxLayout(self.verticalLayoutWidget)
-        self.verticalLayout.setMargin(0)
-        self.verticalLayout.setObjectName(_fromUtf8("verticalLayout"))
-        self.horizontalLayout = QtGui.QHBoxLayout()
-        self.horizontalLayout.setObjectName(_fromUtf8("horizontalLayout"))
-        self.pbResetDO = QtGui.QPushButton(self.verticalLayoutWidget)
-        self.pbResetDO.setMinimumSize(QtCore.QSize(48, 0))
-        self.pbResetDO.setMaximumSize(QtCore.QSize(48, 16777215))
-        self.pbResetDO.setText(_fromUtf8(""))
-        icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap(_fromUtf8(":/img/refresh-16.png")), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        self.centralwidget = QWidget(MBData)
+        self.centralwidget.setObjectName(u"centralwidget")
+        self.tabIOs = QTabWidget(self.centralwidget)
+        self.tabIOs.setObjectName(u"tabIOs")
+        self.tabIOs.setGeometry(QRect(10, 11, 481, 401))
+        self.tabCoils = QWidget()
+        self.tabCoils.setObjectName(u"tabCoils")
+        self.verticalLayoutWidget = QWidget(self.tabCoils)
+        self.verticalLayoutWidget.setObjectName(u"verticalLayoutWidget")
+        self.verticalLayoutWidget.setGeometry(QRect(6, 5, 452, 364))
+        self.verticalLayout = QVBoxLayout(self.verticalLayoutWidget)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout = QHBoxLayout()
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.pbResetDO = QPushButton(self.verticalLayoutWidget)
+        self.pbResetDO.setObjectName(u"pbResetDO")
+        self.pbResetDO.setMinimumSize(QSize(48, 0))
+        self.pbResetDO.setMaximumSize(QSize(48, 16777215))
+        icon1 = QIcon()
+        icon1.addFile(u":/img/refresh-16.png", QSize(), QIcon.Normal, QIcon.On)
         self.pbResetDO.setIcon(icon1)
-        self.pbResetDO.setObjectName(_fromUtf8("pbResetDO"))
+
         self.horizontalLayout.addWidget(self.pbResetDO)
-        self.chkSimCoils = QtGui.QCheckBox(self.verticalLayoutWidget)
-        self.chkSimCoils.setObjectName(_fromUtf8("chkSimCoils"))
+
+        self.chkSimCoils = QCheckBox(self.verticalLayoutWidget)
+        self.chkSimCoils.setObjectName(u"chkSimCoils")
+
         self.horizontalLayout.addWidget(self.chkSimCoils)
+
+
         self.verticalLayout.addLayout(self.horizontalLayout)
-        self.tvCoilsData = QtGui.QTableView(self.verticalLayoutWidget)
-        self.tvCoilsData.setMinimumSize(QtCore.QSize(450, 330))
-        self.tvCoilsData.setObjectName(_fromUtf8("tvCoilsData"))
+
+        self.tvCoilsData = QTableView(self.verticalLayoutWidget)
+        self.tvCoilsData.setObjectName(u"tvCoilsData")
+        self.tvCoilsData.setMinimumSize(QSize(450, 330))
+
         self.verticalLayout.addWidget(self.tvCoilsData)
-        icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap(_fromUtf8(":/img/DO.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.tabIOs.addTab(self.tabCoils, icon2, _fromUtf8(""))
-        self.tabDiscreteInputs = QtGui.QWidget()
-        self.tabDiscreteInputs.setObjectName(_fromUtf8("tabDiscreteInputs"))
-        self.verticalLayoutWidget_2 = QtGui.QWidget(self.tabDiscreteInputs)
-        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(6, 5, 452, 364))
-        self.verticalLayoutWidget_2.setObjectName(_fromUtf8("verticalLayoutWidget_2"))
-        self.verticalLayout_2 = QtGui.QVBoxLayout(self.verticalLayoutWidget_2)
-        self.verticalLayout_2.setMargin(0)
-        self.verticalLayout_2.setObjectName(_fromUtf8("verticalLayout_2"))
-        self.horizontalLayout_2 = QtGui.QHBoxLayout()
-        self.horizontalLayout_2.setObjectName(_fromUtf8("horizontalLayout_2"))
-        self.pbResetDI = QtGui.QPushButton(self.verticalLayoutWidget_2)
-        self.pbResetDI.setMinimumSize(QtCore.QSize(48, 0))
-        self.pbResetDI.setMaximumSize(QtCore.QSize(48, 16777215))
-        self.pbResetDI.setText(_fromUtf8(""))
+
+        icon2 = QIcon()
+        icon2.addFile(u":/img/DO.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.tabIOs.addTab(self.tabCoils, icon2, "")
+        self.tabDiscreteInputs = QWidget()
+        self.tabDiscreteInputs.setObjectName(u"tabDiscreteInputs")
+        self.verticalLayoutWidget_2 = QWidget(self.tabDiscreteInputs)
+        self.verticalLayoutWidget_2.setObjectName(u"verticalLayoutWidget_2")
+        self.verticalLayoutWidget_2.setGeometry(QRect(6, 5, 452, 364))
+        self.verticalLayout_2 = QVBoxLayout(self.verticalLayoutWidget_2)
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_2 = QHBoxLayout()
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.pbResetDI = QPushButton(self.verticalLayoutWidget_2)
+        self.pbResetDI.setObjectName(u"pbResetDI")
+        self.pbResetDI.setMinimumSize(QSize(48, 0))
+        self.pbResetDI.setMaximumSize(QSize(48, 16777215))
         self.pbResetDI.setIcon(icon1)
-        self.pbResetDI.setObjectName(_fromUtf8("pbResetDI"))
+
         self.horizontalLayout_2.addWidget(self.pbResetDI)
-        self.chkSimDisInputs = QtGui.QCheckBox(self.verticalLayoutWidget_2)
-        self.chkSimDisInputs.setObjectName(_fromUtf8("chkSimDisInputs"))
+
+        self.chkSimDisInputs = QCheckBox(self.verticalLayoutWidget_2)
+        self.chkSimDisInputs.setObjectName(u"chkSimDisInputs")
+
         self.horizontalLayout_2.addWidget(self.chkSimDisInputs)
+
+
         self.verticalLayout_2.addLayout(self.horizontalLayout_2)
-        self.tvDiscreteInputsData = QtGui.QTableView(self.verticalLayoutWidget_2)
+
+        self.tvDiscreteInputsData = QTableView(self.verticalLayoutWidget_2)
+        self.tvDiscreteInputsData.setObjectName(u"tvDiscreteInputsData")
         self.tvDiscreteInputsData.setEnabled(True)
-        self.tvDiscreteInputsData.setMinimumSize(QtCore.QSize(450, 330))
-        self.tvDiscreteInputsData.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.tvDiscreteInputsData.setObjectName(_fromUtf8("tvDiscreteInputsData"))
+        self.tvDiscreteInputsData.setMinimumSize(QSize(450, 330))
+        self.tvDiscreteInputsData.setMaximumSize(QSize(16777215, 16777215))
+
         self.verticalLayout_2.addWidget(self.tvDiscreteInputsData)
-        icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap(_fromUtf8(":/img/DI.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.tabIOs.addTab(self.tabDiscreteInputs, icon3, _fromUtf8(""))
-        self.tabHoldingRegisters = QtGui.QWidget()
-        self.tabHoldingRegisters.setObjectName(_fromUtf8("tabHoldingRegisters"))
-        self.verticalLayoutWidget_3 = QtGui.QWidget(self.tabHoldingRegisters)
-        self.verticalLayoutWidget_3.setGeometry(QtCore.QRect(6, 5, 452, 364))
-        self.verticalLayoutWidget_3.setObjectName(_fromUtf8("verticalLayoutWidget_3"))
-        self.verticalLayout_3 = QtGui.QVBoxLayout(self.verticalLayoutWidget_3)
-        self.verticalLayout_3.setMargin(0)
-        self.verticalLayout_3.setObjectName(_fromUtf8("verticalLayout_3"))
-        self.horizontalLayout_3 = QtGui.QHBoxLayout()
-        self.horizontalLayout_3.setObjectName(_fromUtf8("horizontalLayout_3"))
-        self.pbResetAO = QtGui.QPushButton(self.verticalLayoutWidget_3)
-        self.pbResetAO.setMinimumSize(QtCore.QSize(48, 0))
-        self.pbResetAO.setMaximumSize(QtCore.QSize(48, 16777215))
-        self.pbResetAO.setText(_fromUtf8(""))
+
+        icon3 = QIcon()
+        icon3.addFile(u":/img/DI.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.tabIOs.addTab(self.tabDiscreteInputs, icon3, "")
+        self.tabHoldingRegisters = QWidget()
+        self.tabHoldingRegisters.setObjectName(u"tabHoldingRegisters")
+        self.verticalLayoutWidget_3 = QWidget(self.tabHoldingRegisters)
+        self.verticalLayoutWidget_3.setObjectName(u"verticalLayoutWidget_3")
+        self.verticalLayoutWidget_3.setGeometry(QRect(6, 5, 452, 364))
+        self.verticalLayout_3 = QVBoxLayout(self.verticalLayoutWidget_3)
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_3 = QHBoxLayout()
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.pbResetAO = QPushButton(self.verticalLayoutWidget_3)
+        self.pbResetAO.setObjectName(u"pbResetAO")
+        self.pbResetAO.setMinimumSize(QSize(48, 0))
+        self.pbResetAO.setMaximumSize(QSize(48, 16777215))
         self.pbResetAO.setIcon(icon1)
-        self.pbResetAO.setObjectName(_fromUtf8("pbResetAO"))
+
         self.horizontalLayout_3.addWidget(self.pbResetAO)
-        self.chkSimHoldRegs = QtGui.QCheckBox(self.verticalLayoutWidget_3)
-        self.chkSimHoldRegs.setObjectName(_fromUtf8("chkSimHoldRegs"))
+
+        self.chkSimHoldRegs = QCheckBox(self.verticalLayoutWidget_3)
+        self.chkSimHoldRegs.setObjectName(u"chkSimHoldRegs")
+
         self.horizontalLayout_3.addWidget(self.chkSimHoldRegs)
-        self.cmbHoldRegsType = QtGui.QComboBox(self.verticalLayoutWidget_3)
+
+        self.cmbHoldRegsType = QComboBox(self.verticalLayoutWidget_3)
+        self.cmbHoldRegsType.addItem("")
+        self.cmbHoldRegsType.addItem("")
+        self.cmbHoldRegsType.setObjectName(u"cmbHoldRegsType")
         self.cmbHoldRegsType.setMaxVisibleItems(2)
-        self.cmbHoldRegsType.setObjectName(_fromUtf8("cmbHoldRegsType"))
-        self.cmbHoldRegsType.addItem(_fromUtf8(""))
-        self.cmbHoldRegsType.addItem(_fromUtf8(""))
+
         self.horizontalLayout_3.addWidget(self.cmbHoldRegsType)
+
+
         self.verticalLayout_3.addLayout(self.horizontalLayout_3)
-        self.tvHoldingRegistersData = QtGui.QTableView(self.verticalLayoutWidget_3)
-        self.tvHoldingRegistersData.setMinimumSize(QtCore.QSize(450, 330))
-        self.tvHoldingRegistersData.setObjectName(_fromUtf8("tvHoldingRegistersData"))
+
+        self.tvHoldingRegistersData = QTableView(self.verticalLayoutWidget_3)
+        self.tvHoldingRegistersData.setObjectName(u"tvHoldingRegistersData")
+        self.tvHoldingRegistersData.setMinimumSize(QSize(450, 330))
+
         self.verticalLayout_3.addWidget(self.tvHoldingRegistersData)
-        icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap(_fromUtf8(":/img/AO.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.tabIOs.addTab(self.tabHoldingRegisters, icon4, _fromUtf8(""))
-        self.tabInputRegisters = QtGui.QWidget()
-        self.tabInputRegisters.setObjectName(_fromUtf8("tabInputRegisters"))
-        self.verticalLayoutWidget_4 = QtGui.QWidget(self.tabInputRegisters)
-        self.verticalLayoutWidget_4.setGeometry(QtCore.QRect(6, 5, 452, 364))
-        self.verticalLayoutWidget_4.setObjectName(_fromUtf8("verticalLayoutWidget_4"))
-        self.verticalLayout_4 = QtGui.QVBoxLayout(self.verticalLayoutWidget_4)
-        self.verticalLayout_4.setMargin(0)
-        self.verticalLayout_4.setObjectName(_fromUtf8("verticalLayout_4"))
-        self.horizontalLayout_4 = QtGui.QHBoxLayout()
-        self.horizontalLayout_4.setObjectName(_fromUtf8("horizontalLayout_4"))
-        self.pbResetAI = QtGui.QPushButton(self.verticalLayoutWidget_4)
-        self.pbResetAI.setMinimumSize(QtCore.QSize(48, 0))
-        self.pbResetAI.setMaximumSize(QtCore.QSize(48, 16777215))
-        self.pbResetAI.setText(_fromUtf8(""))
+
+        icon4 = QIcon()
+        icon4.addFile(u":/img/AO.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.tabIOs.addTab(self.tabHoldingRegisters, icon4, "")
+        self.tabInputRegisters = QWidget()
+        self.tabInputRegisters.setObjectName(u"tabInputRegisters")
+        self.verticalLayoutWidget_4 = QWidget(self.tabInputRegisters)
+        self.verticalLayoutWidget_4.setObjectName(u"verticalLayoutWidget_4")
+        self.verticalLayoutWidget_4.setGeometry(QRect(6, 5, 452, 364))
+        self.verticalLayout_4 = QVBoxLayout(self.verticalLayoutWidget_4)
+        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
+        self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_4 = QHBoxLayout()
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.pbResetAI = QPushButton(self.verticalLayoutWidget_4)
+        self.pbResetAI.setObjectName(u"pbResetAI")
+        self.pbResetAI.setMinimumSize(QSize(48, 0))
+        self.pbResetAI.setMaximumSize(QSize(48, 16777215))
         self.pbResetAI.setIcon(icon1)
-        self.pbResetAI.setObjectName(_fromUtf8("pbResetAI"))
+
         self.horizontalLayout_4.addWidget(self.pbResetAI)
-        self.chkSimInputRegs = QtGui.QCheckBox(self.verticalLayoutWidget_4)
-        self.chkSimInputRegs.setObjectName(_fromUtf8("chkSimInputRegs"))
+
+        self.chkSimInputRegs = QCheckBox(self.verticalLayoutWidget_4)
+        self.chkSimInputRegs.setObjectName(u"chkSimInputRegs")
+
         self.horizontalLayout_4.addWidget(self.chkSimInputRegs)
-        self.cmbInputRegsType = QtGui.QComboBox(self.verticalLayoutWidget_4)
+
+        self.cmbInputRegsType = QComboBox(self.verticalLayoutWidget_4)
+        self.cmbInputRegsType.addItem("")
+        self.cmbInputRegsType.addItem("")
+        self.cmbInputRegsType.setObjectName(u"cmbInputRegsType")
         self.cmbInputRegsType.setMaxVisibleItems(2)
-        self.cmbInputRegsType.setObjectName(_fromUtf8("cmbInputRegsType"))
-        self.cmbInputRegsType.addItem(_fromUtf8(""))
-        self.cmbInputRegsType.addItem(_fromUtf8(""))
+
         self.horizontalLayout_4.addWidget(self.cmbInputRegsType)
+
+
         self.verticalLayout_4.addLayout(self.horizontalLayout_4)
-        self.tvInputRegistersData = QtGui.QTableView(self.verticalLayoutWidget_4)
-        self.tvInputRegistersData.setMinimumSize(QtCore.QSize(450, 330))
-        self.tvInputRegistersData.setObjectName(_fromUtf8("tvInputRegistersData"))
+
+        self.tvInputRegistersData = QTableView(self.verticalLayoutWidget_4)
+        self.tvInputRegistersData.setObjectName(u"tvInputRegistersData")
+        self.tvInputRegistersData.setMinimumSize(QSize(450, 330))
+
         self.verticalLayout_4.addWidget(self.tvInputRegistersData)
-        icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap(_fromUtf8(":/img/AI.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.tabIOs.addTab(self.tabInputRegisters, icon5, _fromUtf8(""))
+
+        icon5 = QIcon()
+        icon5.addFile(u":/img/AI.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.tabIOs.addTab(self.tabInputRegisters, icon5, "")
         MBData.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MBData)
+
         self.tabIOs.setCurrentIndex(0)
-        QtCore.QMetaObject.connectSlotsByName(MBData)
+
+
+        QMetaObject.connectSlotsByName(MBData)
+    # setupUi
 
     def retranslateUi(self, MBData):
-        MBData.setWindowTitle(QtGui.QApplication.translate("MBData", "Data", None, QtGui.QApplication.UnicodeUTF8))
-        self.pbResetDO.setToolTip(QtGui.QApplication.translate("MBData", "Reset", None, QtGui.QApplication.UnicodeUTF8))
-        self.chkSimCoils.setText(QtGui.QApplication.translate("MBData", "Sim", None, QtGui.QApplication.UnicodeUTF8))
-        self.tabIOs.setTabText(self.tabIOs.indexOf(self.tabCoils), QtGui.QApplication.translate("MBData", "Coils", None, QtGui.QApplication.UnicodeUTF8))
-        self.pbResetDI.setToolTip(QtGui.QApplication.translate("MBData", "Reset", None, QtGui.QApplication.UnicodeUTF8))
-        self.chkSimDisInputs.setText(QtGui.QApplication.translate("MBData", "Sim", None, QtGui.QApplication.UnicodeUTF8))
-        self.tabIOs.setTabText(self.tabIOs.indexOf(self.tabDiscreteInputs), QtGui.QApplication.translate("MBData", "Discrete Inputs", None, QtGui.QApplication.UnicodeUTF8))
-        self.pbResetAO.setToolTip(QtGui.QApplication.translate("MBData", "Reset", None, QtGui.QApplication.UnicodeUTF8))
-        self.chkSimHoldRegs.setText(QtGui.QApplication.translate("MBData", "Sim", None, QtGui.QApplication.UnicodeUTF8))
-        self.cmbHoldRegsType.setItemText(0, QtGui.QApplication.translate("MBData", "Decimal", None, QtGui.QApplication.UnicodeUTF8))
-        self.cmbHoldRegsType.setItemText(1, QtGui.QApplication.translate("MBData", "Hex", None, QtGui.QApplication.UnicodeUTF8))
-        self.tabIOs.setTabText(self.tabIOs.indexOf(self.tabHoldingRegisters), QtGui.QApplication.translate("MBData", "Holding Registers", None, QtGui.QApplication.UnicodeUTF8))
-        self.pbResetAI.setToolTip(QtGui.QApplication.translate("MBData", "Reset", None, QtGui.QApplication.UnicodeUTF8))
-        self.chkSimInputRegs.setText(QtGui.QApplication.translate("MBData", "Sim", None, QtGui.QApplication.UnicodeUTF8))
-        self.cmbInputRegsType.setItemText(0, QtGui.QApplication.translate("MBData", "Decimal", None, QtGui.QApplication.UnicodeUTF8))
-        self.cmbInputRegsType.setItemText(1, QtGui.QApplication.translate("MBData", "Hex", None, QtGui.QApplication.UnicodeUTF8))
-        self.tabIOs.setTabText(self.tabIOs.indexOf(self.tabInputRegisters), QtGui.QApplication.translate("MBData", "Input Registers", None, QtGui.QApplication.UnicodeUTF8))
+        MBData.setWindowTitle(QCoreApplication.translate("MBData", u"Data", None))
+#if QT_CONFIG(tooltip)
+        self.pbResetDO.setToolTip(QCoreApplication.translate("MBData", u"Reset", None))
+#endif // QT_CONFIG(tooltip)
+        self.pbResetDO.setText("")
+        self.chkSimCoils.setText(QCoreApplication.translate("MBData", u"Sim", None))
+        self.tabIOs.setTabText(self.tabIOs.indexOf(self.tabCoils), QCoreApplication.translate("MBData", u"Coils", None))
+#if QT_CONFIG(tooltip)
+        self.pbResetDI.setToolTip(QCoreApplication.translate("MBData", u"Reset", None))
+#endif // QT_CONFIG(tooltip)
+        self.pbResetDI.setText("")
+        self.chkSimDisInputs.setText(QCoreApplication.translate("MBData", u"Sim", None))
+        self.tabIOs.setTabText(self.tabIOs.indexOf(self.tabDiscreteInputs), QCoreApplication.translate("MBData", u"Discrete Inputs", None))
+#if QT_CONFIG(tooltip)
+        self.pbResetAO.setToolTip(QCoreApplication.translate("MBData", u"Reset", None))
+#endif // QT_CONFIG(tooltip)
+        self.pbResetAO.setText("")
+        self.chkSimHoldRegs.setText(QCoreApplication.translate("MBData", u"Sim", None))
+        self.cmbHoldRegsType.setItemText(0, QCoreApplication.translate("MBData", u"Decimal", None))
+        self.cmbHoldRegsType.setItemText(1, QCoreApplication.translate("MBData", u"Hex", None))
 
-import pyModSlaveQt_rc
+        self.tabIOs.setTabText(self.tabIOs.indexOf(self.tabHoldingRegisters), QCoreApplication.translate("MBData", u"Holding Registers", None))
+#if QT_CONFIG(tooltip)
+        self.pbResetAI.setToolTip(QCoreApplication.translate("MBData", u"Reset", None))
+#endif // QT_CONFIG(tooltip)
+        self.pbResetAI.setText("")
+        self.chkSimInputRegs.setText(QCoreApplication.translate("MBData", u"Sim", None))
+        self.cmbInputRegsType.setItemText(0, QCoreApplication.translate("MBData", u"Decimal", None))
+        self.cmbInputRegsType.setItemText(1, QCoreApplication.translate("MBData", u"Hex", None))
+
+        self.tabIOs.setTabText(self.tabIOs.indexOf(self.tabInputRegisters), QCoreApplication.translate("MBData", u"Input Registers", None))
+    # retranslateUi
+

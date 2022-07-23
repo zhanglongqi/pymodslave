@@ -10,7 +10,7 @@
 #-------------------------------------------------------------------------------
 #!/usr/bin/env python
 
-from PyQt4 import QtGui,QtCore
+from PySide6 import QtGui,QtCore, QtWidgets
 from Ui_mbdata import Ui_MBData
 from ModSlaveMBDataModel import ModSlaveMBDataModel
 from ModSlaveMBDataItemDelegate import ModSlaveMBDataItemDelegate
@@ -19,7 +19,7 @@ from ModSlaveMBDataItemDelegate import ModSlaveMBDataItemDelegate
 import logging
 
 #-------------------------------------------------------------------------------
-class ModSlaveMBDataWindow(QtGui.QMainWindow):
+class ModSlaveMBDataWindow(QtWidgets.QMainWindow):
     """ Class wrapper for modbus data """
 
     def __init__(self):
@@ -49,10 +49,10 @@ class ModSlaveMBDataWindow(QtGui.QMainWindow):
         self.ui.pbResetAO.clicked.connect(self._reset_AO)
         self.ui.pbResetAI.clicked.connect(self._reset_AI)
         #read only table views
-        self.ui.tvCoilsData.setEditTriggers(QtGui.QAbstractItemView.NoEditTriggers)
-        self.ui.tvDiscreteInputsData.setEditTriggers(QtGui.QAbstractItemView.NoEditTriggers)
-        self.ui.tvHoldingRegistersData.setEditTriggers(QtGui.QAbstractItemView.NoEditTriggers)
-        self.ui.tvInputRegistersData.setEditTriggers(QtGui.QAbstractItemView.NoEditTriggers)
+        self.ui.tvCoilsData.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+        self.ui.tvDiscreteInputsData.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+        self.ui.tvHoldingRegistersData.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+        self.ui.tvInputRegistersData.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         #item delegates
         self.ui.tvCoilsData.setItemDelegate(ModSlaveMBDataItemDelegate(True))
         self.ui.tvDiscreteInputsData.setItemDelegate(ModSlaveMBDataItemDelegate(True))
@@ -94,33 +94,33 @@ class ModSlaveMBDataWindow(QtGui.QMainWindow):
         self.coils.sim = self.ui.chkSimCoils.isChecked()
         self.ui.pbResetDO.setDisabled(self.coils.sim)
         if (self.coils.sim):
-            self.ui.tvCoilsData.setEditTriggers(QtGui.QAbstractItemView.NoEditTriggers)
+            self.ui.tvCoilsData.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         else:
-            self.ui.tvCoilsData.setEditTriggers(QtGui.QAbstractItemView.AnyKeyPressed)
+            self.ui.tvCoilsData.setEditTriggers(QtWidgets.QAbstractItemView.AnyKeyPressed)
 
     def _sim_dis_inputs_changed(self):
         self.dis_inputs.sim = self.ui.chkSimDisInputs.isChecked()
         self.ui.pbResetDI.setDisabled(self.dis_inputs.sim)
         if (self.dis_inputs.sim):
-            self.ui.tvDiscreteInputsData.setEditTriggers(QtGui.QAbstractItemView.NoEditTriggers)
+            self.ui.tvDiscreteInputsData.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         else:
-            self.ui.tvDiscreteInputsData.setEditTriggers(QtGui.QAbstractItemView.AnyKeyPressed)
+            self.ui.tvDiscreteInputsData.setEditTriggers(QtWidgets.QAbstractItemView.AnyKeyPressed)
 
     def _sim_input_regs_changed(self):
         self.input_regs.sim = self.ui.chkSimInputRegs.isChecked()
         self.ui.pbResetAI.setDisabled(self.input_regs.sim)
         if (self.input_regs.sim):
-            self.ui.tvInputRegistersData.setEditTriggers(QtGui.QAbstractItemView.NoEditTriggers)
+            self.ui.tvInputRegistersData.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         else:
-            self.ui.tvInputRegistersData.setEditTriggers(QtGui.QAbstractItemView.AnyKeyPressed)
+            self.ui.tvInputRegistersData.setEditTriggers(QtWidgets.QAbstractItemView.AnyKeyPressed)
 
     def _sim_hold_regs_changed(self):
         self.hold_regs.sim = self.ui.chkSimHoldRegs.isChecked()
         self.ui.pbResetAO.setDisabled(self.hold_regs.sim)
         if (self.hold_regs.sim):
-            self.ui.tvHoldingRegistersData.setEditTriggers(QtGui.QAbstractItemView.NoEditTriggers)
+            self.ui.tvHoldingRegistersData.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         else:
-            self.ui.tvHoldingRegistersData.setEditTriggers(QtGui.QAbstractItemView.AnyKeyPressed)
+            self.ui.tvHoldingRegistersData.setEditTriggers(QtWidgets.QAbstractItemView.AnyKeyPressed)
 
     def _models_data_changed(self):
         self.ui.tvCoilsData.resizeColumnsToContents()

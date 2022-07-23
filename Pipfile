@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pyside6 = "*"
+configparser = "*"
+modbus-tk = "*"
+
+[dev-packages]
+yapf = "*"
+flake8 = "*"
+pyinstaller = "*"
+
+[requires]
+python_version = "3.10"

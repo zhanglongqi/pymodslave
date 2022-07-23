@@ -10,14 +10,14 @@
 #-------------------------------------------------------------------------------
 #!/usr/bin/env python
 
-from PyQt4 import QtGui,QtCore
+from PySide6 import QtGui,QtCore, QtWidgets
 from Ui_settings import Ui_Settings
 
 #add logging capability
 import logging
 
 #-------------------------------------------------------------------------------
-class ModSlaveSettingsWindow(QtGui.QDialog):
+class ModSlaveSettingsWindow(QtWidgets.QDialog):
     """ Class wrapper for general settings ui """
 
     def __init__(self):

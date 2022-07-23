@@ -10,12 +10,12 @@
 #-------------------------------------------------------------------------------
 #!/usr/bin/env python
 
-from PyQt4 import QtGui,QtCore
+from PySide6 import QtGui,QtCore, QtWidgets
 
 import Utils
 
 #-------------------------------------------------------------------------------
-class ModSlaveMBDataItemDelegate(QtGui.QStyledItemDelegate):
+class ModSlaveMBDataItemDelegate(QtWidgets.QStyledItemDelegate):
     """ Modbus data model items delegate """
 
     def __init__(self, discrete=False, data_type=0):#data type > 0 : decimal, 1 : hex
