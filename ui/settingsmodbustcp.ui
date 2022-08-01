@@ -6,20 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>180</width>
-    <height>90</height>
+    <width>250</width>
+    <height>150</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>180</width>
-    <height>90</height>
-   </size>
-  </property>
-  <property name="maximumSize">
-   <size>
-    <width>180</width>
-    <height>90</height>
+    <width>250</width>
+    <height>150</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -52,13 +46,6 @@
        </property>
       </widget>
      </item>
-     <item row="0" column="0">
-      <widget class="QLabel" name="lblIP">
-       <property name="text">
-        <string>IP</string>
-       </property>
-      </widget>
-     </item>
      <item row="0" column="1">
       <widget class="QLineEdit" name="leIP">
        <property name="inputMask">
@@ -66,7 +53,27 @@
        </property>
       </widget>
      </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="lblIP">
+       <property name="text">
+        <string>IP</string>
+       </property>
+      </widget>
+     </item>
     </layout>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
    </item>
    <item>
     <widget class="QDialogButtonBox" name="buttonBox">
@@ -75,6 +82,9 @@
      </property>
      <property name="standardButtons">
       <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+     <property name="centerButtons">
+      <bool>true</bool>
      </property>
     </widget>
    </item>
